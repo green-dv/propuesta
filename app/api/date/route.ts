@@ -6,7 +6,6 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { respuesta, dia, hora } = body
 
-    // Validación básica
     if (!respuesta) {
       return NextResponse.json(
         { error: "Faltan datos" },
@@ -17,7 +16,6 @@ export async function POST(req: Request) {
     const diaValido = dia === "" ? null : dia;
     const horaValida = hora === "" ? null : hora;
 
-    // Insertar en la BD
     const result = await pool.query(
       `INSERT INTO salida (respuesta, dia, hora)
        VALUES ($1, $2, $3)
@@ -34,7 +32,7 @@ export async function POST(req: Request) {
     console.error(error)
 
     return NextResponse.json(
-      { error: "Error en el servidor" },
+      { error: error },
       { status: 500 }
     )
   }

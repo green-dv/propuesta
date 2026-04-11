@@ -49,16 +49,19 @@ export default function Home() {
     return minutos >= inicio && minutos <= fin;
   };
   const esFechaHoraValida = (fecha: string, hora: string) => {
-    if (!fecha || !hora) return false;
+    // ⚪ No validar aún (faltan datos)
+    if (!fecha?.trim() || !hora?.trim()) return null;
 
     const ahora = new Date();
-
     const seleccion = new Date(`${fecha}T${hora}`);
 
-    // límite máximo (30 días desde ahora)
     const max = new Date();
     max.setDate(max.getDate() + 30);
 
+    // ❌ inválido → false
+    if (isNaN(seleccion.getTime())) return false;
+
+    // ✅ válido → true
     return seleccion >= ahora && seleccion <= max;
   };
 
@@ -82,6 +85,10 @@ export default function Home() {
 
     logAcceso()
   }, [])
+
+  const incompleto = !dia || !hora
+  const invalido = esFechaHoraValida(dia, hora) === false
+  const mostrarError = !incompleto && invalido
 
   return (
     <main className="h-screen flex items-center justify-center bg-[#1e1e2e] text-[#cdd6f4]">
@@ -406,11 +413,10 @@ export default function Home() {
                 className="input"
               />
             </div>
-            {dia && !esFechaHoraValida(dia, hora) && (
+            {mostrarError  && (
               <p className="text-sm mt-2 text-[#f38ba8]">
                 No crees que hay algo mal con la fecha?
               </p>
-              
             )}
             {hora && !esHoraValida(hora) && (
               <p className="text-sm mt-2 text-[#f38ba8]">
