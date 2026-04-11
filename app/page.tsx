@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sunflower from "./components/Sunflower";
 
 export default function Home() {
@@ -20,7 +20,6 @@ export default function Home() {
         },
         body: JSON.stringify({
           respuesta,
-          intereses,
           dia,
           hora,
         }),
@@ -63,6 +62,27 @@ export default function Home() {
     return seleccion >= ahora && seleccion <= max;
   };
 
+  useEffect(() => {
+    const logAcceso = async () => {
+      try {
+        await fetch('/api/accesos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ruta: window.location.pathname,
+            userAgent: navigator.userAgent,
+          }),
+        })
+      } catch (error) {
+        console.error('Error log acceso:', error)
+      }
+    }
+
+    logAcceso()
+  }, [])
+
   return (
     <main className="h-screen flex items-center justify-center bg-[#1e1e2e] text-[#cdd6f4]">
       <div className="w-full max-w-md bg-[#313244] rounded-2xl shadow-xl p-6 text-center">
@@ -75,7 +95,7 @@ export default function Home() {
             Hola, ha pasado muy poco tiempo de la última vez que te escribí, pero hay tantas cosas que no te he dicho
           </h1>
 
-          <button onClick={() => next(25)} className="btn">
+          <button onClick={() => next(1)} className="btn">
               Siguiente
             </button>
         </div>)}
@@ -84,7 +104,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Tal vez te hice sentir que solo te estaba usando, que solo te buscaba cuando me sentía solo
+            Tal vez te hice sentir como que solo te escribía cuando yo me sentía solo. Y en verdad yo lo sentí también....
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -96,7 +116,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Pero no fue así, esa no era la razón por la que te escribí
+            Hice ver como que hablarte fue un error, pero no lo fue
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -108,7 +128,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Hice ver como que hablarte fue un error, pero para nada lo fue
+            Esa no fue la razón por la que te escribí. Cuando me dijiste que aquella vez que creí haberte visto no eras tú en verdad me derrumbé
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -120,7 +140,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            cuando me dijiste que aquella vez que creí haberte visto no eras tu, estaba destruido
+            En verdad quería que fueras tú....
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -132,7 +152,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            En verdad creía que eras tu, queria que fueras tu...
+            Por que desde cuando creí haberte visto otra vez es que todo en mi cabeza está dando vueltas
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -144,7 +164,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Quise decirte eso, y demasiadas otras cosas
+            Me dieron muchas ganas de volverte a conocer...De volverte a hablar
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -156,7 +176,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Quise decirte que desde entonces no puedo parar de pensar en ti
+            Y ya sé que suena ridículo o algo apresurado, pero en verdad creo que me volví a interesar en ti
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -168,7 +188,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Traté de no hacerlo, traté de intentar superarlo y enfocarme en otras cosas porque creía que era la culpa volviendo a destrozar todo mi avance
+            Intenté seguir con mi vida y no destrozar mi progreso, pero desde entonces fui a esperarte cada día a la tejada sorzano para confirmar mis sospechas
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -180,7 +200,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Pero no era eso
+            Quería saber algo de ti, de la chica que lleva persiguiendome en mis pensamientos y sueños por ya un mes
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -192,7 +212,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            La verdad es que en serio me volví a enamorar
+            Al principio creí que tal vez solo era la culpa aprovechando un momento de vulnerabilidad para atacarme con mas fuerza
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -204,7 +224,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Desde entonces tengo tantas ganas de volverte a concer
+            Pero en verdad esto no se siente como culpa, y lo siento por tardarme en notarlo
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -216,7 +236,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            a la nueva versión de ti
+            Es raro, siento que me gustas (y ya se que es una forma rara de decirlo)
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -228,7 +248,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Cuando te escribí no esperaba que me fueras a mandar audios, o que quiseras verme
+            Y no pude evitarlo, pero me enamoré de tu voz....me enamoré de ti, hiciste que aquella noche fuera mágica en verdad aunque solo hablaramos por chat, y yo lo único que hice fue mantenerte despierta hasta las 2 TwT lo siento
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -240,7 +260,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            No acepté porque en aquel momento no había asimilado lo que pasó, sentía que mis sentimientos de las últimas semanas habían sido en vano
+            No sabía lo que sentía, solo quería saber si debia irme o quedarme, por lo que te hice esa pregunta tan estúpida XD
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -252,7 +272,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            pero en verdad no, no fue en vano y ahora me doy cuenta
+            Quise convencerme en que ese sentimiento era remordimiento, por lo que quise que me rechazaras de una vez, pensé que si me odiabas dejaría de perseguirte y podría seguir con mi vida
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -264,7 +284,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            No me había sentido así de vivo hace tanto tiempo, sentí como las mariposas volvían
+            Pero no quiero eso, este sentimiento solo ha ido creciendo más y más en los últimos días que me he permitido pensar más sobre eso
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -276,7 +296,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            y ya se que vas a decir que soy un migajero, ya lo se. ¿Pero en verdad como no sentirme así cuando tan bella dama me manda un audio?
+            Y solo quiero verte, quiero conocerte otra vez, quiero mostrarte la nueva versión de mí y ser digno de si quiera poder estar cerca tuyo
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -288,7 +308,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Quise preguntarte tantas cosas
+            Cuando hablamos esa noche lo sentí tan natural, no creí que escucharía tu voz de nuevo 🥲....y me volví a ilusionar
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -300,7 +320,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Quiero saber si ya encontraste a otra persona que se haya enamorado perdidamente de ti, o si quisieras escuchar a todo lo que tengo que decirte en persona
+            Siento que lo arruiné, me ganó el miedo de que me dijeras que me alejara de tu vida, que te deje en paz y asocié ese sentimiento a cómo me había sentido el primer año desde que terminamos
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -312,7 +332,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            En verdad necesito una respuesta para poder seguir, para poder saber que hacer con este sentimiento que me ha quitado el sueño por tanto tiempo
+            No te escribí esta semana, quería prepararme, saber realmente lo que siento. Me asusta, pero tu vales que deje todo lo malo, mis miedos, la inseguridad, la frustración, la culpa y que por fin acepte completamente la responsabilidad de una relación. Por lo que te he estado preparando otra sorpresa 0_0
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -324,7 +344,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Te lo diría todo por aqui, pero hay cosas que solo deben ser dichas en persona
+            Tengo tanto que decirte, tanto que mostrarte. Pero hay algunas cosas que solo deben ser dichas en persona 0-0
           </h1>
 
           <button onClick={() => next(1)} className="btn">
@@ -335,14 +355,14 @@ export default function Home() {
           <div>
             <button onClick={prev} className="back">⬅ Volver</button>
             <h1 className="text-xl mb-4">
-              Asi que Abi, ¿Tienes intereses en alguien más? pd en cuanto acabes de leer todo podré leer tus respuestas
+              Qué me dices Abi ¿Quisieras salir conmigo una última vez? pd. Luego podré ver tus respuestas, así que si no te sientes segura para hablar y dices que no lo entenderé y no hará falta que me vuelvas a hablar, tampoco te volveré a buscar, pero si sientes al menos la mitad de lo mucho que yo siento por ti, ¿Por qué no intentarlo? (y si, estoy citando a invincible XD)
             </h1>
 
             <div className="flex justify-center gap-4">
               <button
                 onClick={() => {
-                  setIntereses("sí");
-                  next(4);
+                  setRespuesta("sí");
+                  next(1);
                 }}
                 className="btn bg-[#a6e3a1] text-black"
               >
@@ -350,9 +370,10 @@ export default function Home() {
               </button>
 
               <button
-                onClick={() => {
-                  setIntereses("no");
-                  next(1);
+                onClick={async () => {
+                  setRespuesta("no");
+                  next(4);
+                  await enviarDatos();
                 }}
                 className="btn bg-[#f38ba8] text-black"
               >
@@ -361,38 +382,9 @@ export default function Home() {
             </div>
           </div>
         )}
+        
+
         {step === 23 && (
-        <div>
-          <button onClick={prev} className="back">⬅ Volver</button>
-
-          <h1 className="text-xl mb-4">
-            Entonces, ¿Escucharías lo que tengo que decirte en persona?
-          </h1>
-
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => {
-                setRespuesta("sí");
-                next(1);
-              }}
-              className="btn bg-[#a6e3a1] text-black"
-            >
-              Sí
-            </button>
-
-            <button
-              onClick={() => {
-                setRespuesta("no");
-                next(4);
-              }}
-              className="btn bg-[#f38ba8] text-black"
-            >
-              No
-            </button>
-          </div>
-        </div>)}   
-
-        {step === 24 && (
           <div>
             <button onClick={prev} className="back">⬅ Volver</button>
             <h1 className="text-xl mb-4">
@@ -437,7 +429,7 @@ export default function Home() {
           </div>
         )}
 
-        {step === 25 && (
+        {step === 24 && (
           <div>
             <button onClick={prev} className="back">⬅ Volver</button>
             <h1 className="text-2xl font-bold mb-4 text-[#a6e3a1]">
@@ -451,22 +443,25 @@ export default function Home() {
               <Sunflower />
             </p>
             <button onClick={async () => {
-            await enviarDatos()}} className="btn">
+                next(4);
+                await enviarDatos();
+              }} className="btn">
               Confirmar
             </button>
           </div>
         )}
+
         {step === 26 && (
           <div>
             <h1 className="text-2xl font-bold mb-4 text-[#a6e3a1]">
-              Lo entiendo, te felicito, y te deseo todo lo mejor
+              Está bien Abi lo entiendo, espero que te esté yendo bien, gracias por leer esto ;)
             </h1>
           </div>
         )}
-        {step === 27 && (
+        {step === 28 && (
           <div>
             <h1 className="text-2xl font-bold mb-4 text-[#a6e3a1]">
-              Lo entiendo, gracias por tomarte el tiempo de leer esto
+              Gracias, tu respuesta me llegará pronto 👌
             </h1>
           </div>
         )}
