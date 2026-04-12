@@ -2,14 +2,14 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Play, Pause, SkipForward, SkipBack, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "Stop the World I Wanna Get Off With You",
-  artist: "Arctic Monekys",
-  albumArt: "/31278.avif", 
-  audioSrc: "/Arctic Monkeys - Stop The World I Wanna Get Off With You (Official Audio) - Official Arctic Monkeys.mp3" 
+  title: "Pasilyo",
+  artist: "Sunkissed Lola",
+  albumArt: "/artworks-4nES0uJbVv8CXHWo-m9Co6A-t500x500.jpg", 
+  audioSrc: "/SunKissed Lola - Pasilyo (Official Lyric Video) - SunkissedLolaVEVO.mp3" 
 };
 
 const AudioPlayer = () => {
