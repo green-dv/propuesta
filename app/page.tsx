@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Sunflower from "./components/Sunflower";
+import AudioPlayer from "./components/AudioPlayer";
 
 export default function Home() {
   const [step, setStep] = useState(0);
@@ -92,7 +93,9 @@ export default function Home() {
 
   return (
     <main className="h-screen flex items-center justify-center bg-[#1e1e2e] text-[#cdd6f4]">
-      <div className="w-full max-w-md bg-[#313244] rounded-2xl shadow-xl p-6 text-center">
+      <div className="flex flex-col items-center gap-6">
+        {/* Tu primer componente (el del p-6 text-center) */}
+        <div className="w-full max-w-md bg-[#313244] rounded-2xl shadow-xl p-6 text-center">
         
         {step === 0 && (
         <div>
@@ -471,6 +474,8 @@ export default function Home() {
           </div>
         )}
 
+      </div>
+      <AudioPlayer />
       </div>
 
       <style jsx>{`
