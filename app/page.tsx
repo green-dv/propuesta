@@ -96,7 +96,6 @@ export default function Home() {
         
         {step === 0 && (
         <div>
-          <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
             Hola, ha pasado muy poco tiempo de la última vez que te escribí, pero hay tantas cosas que no te he dicho
