@@ -101,12 +101,8 @@ export default function Home() {
         <div>
 
           <h1 className="text-xl mb-4">
-            Hola, ha pasado muy poco tiempo de la última vez que te escribí, pero hay tantas cosas que no te he dicho
           </h1>
 
-          <button onClick={() => next(1)} className="btn">
-              Siguiente
-            </button>
         </div>)}
         {step === 1 && (
         <div>
@@ -475,7 +471,6 @@ export default function Home() {
         )}
 
       </div>
-      <AudioPlayer />
       </div>
 
       <style jsx>{`
