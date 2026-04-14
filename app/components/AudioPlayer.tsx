@@ -6,10 +6,10 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "Pasilyo",
-  artist: "Sunkissed Lola",
-  albumArt: "/artworks-4nES0uJbVv8CXHWo-m9Co6A-t500x500.jpg", 
-  audioSrc: "/SunKissed Lola - Pasilyo (Official Lyric Video) - SunkissedLolaVEVO.mp3" 
+  title: "Can't help falling in love",
+  artist: "Elvis Presley",
+  albumArt: "/elvis.jpg", 
+  audioSrc: "/Elvis.mp3" 
 };
 
 const AudioPlayer = () => {

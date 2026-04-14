@@ -44,8 +44,8 @@ export default function Home() {
     const [h, m] = hora.split(":").map(Number);
 
     const minutos = h * 60 + m;
-    const inicio = 8 * 60;   // 08:00
-    const fin = 22 * 60;     // 22:00
+    const inicio = 8 * 60; 
+    const fin = 22 * 60;     
 
     return minutos >= inicio && minutos <= fin;
   };
@@ -59,10 +59,8 @@ export default function Home() {
     const max = new Date();
     max.setDate(max.getDate() + 30);
 
-    // ❌ inválido → false
     if (isNaN(seleccion.getTime())) return false;
 
-    // ✅ válido → true
     return seleccion >= ahora && seleccion <= max;
   };
 
@@ -94,13 +92,13 @@ export default function Home() {
   return (
     <main className="h-screen flex items-center justify-center bg-[#1e1e2e] text-[#cdd6f4]">
       <div className="flex flex-col items-center gap-6">
-        {/* Tu primer componente (el del p-6 text-center) */}
         <div className="w-full max-w-md bg-[#313244] rounded-2xl shadow-xl p-6 text-center">
         
         {step === 0 && (
         <div>
 
           <h1 className="text-xl mb-4">
+            Holi, no se si vuelvas a leer esto, o como nos vaya el jueves :v pero no puedo evitar sentirme como esta canción ♫  ♥
           </h1>
 
         </div>)}
@@ -471,6 +469,7 @@ export default function Home() {
         )}
 
       </div>
+      <AudioPlayer/>
       </div>
 
       <style jsx>{`
