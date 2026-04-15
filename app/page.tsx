@@ -98,11 +98,7 @@ export default function Home() {
         <div>
 
           <h1 className="text-xl mb-4">
-            How can this be anything else when all I dream of is your eyes?
           </h1>
-          <button onClick={() => next(1)} className="btn">
-              Siguiente
-            </button>
 
         </div>)}
         {step === 1 && (
@@ -469,7 +465,6 @@ export default function Home() {
         )}
 
       </div>
-      <AudioPlayer/>
       </div>
 
       <style jsx>{`
