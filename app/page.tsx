@@ -98,8 +98,11 @@ export default function Home() {
         <div>
 
           <h1 className="text-xl mb-4">
-            Holi, no se si vuelvas a leer esto, o como nos vaya el jueves :v pero no puedo evitar sentirme como esta canción ♫  ♥
+            How can this be anything else when all I dream of is your eyes?
           </h1>
+          <button onClick={() => next(1)} className="btn">
+              Siguiente
+            </button>
 
         </div>)}
         {step === 1 && (
@@ -107,12 +110,9 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Tal vez te hice sentir como que solo te escribía cuando yo me sentía solo. Y en verdad yo lo sentí también....
+            Tal vez no pueda llevarte la otra sorpresa ;p esperaba poder dartelo en la villarroel o dejartelo en tu casa, es un poquito grande o.o
           </h1>
 
-          <button onClick={() => next(1)} className="btn">
-              Siguiente
-            </button>
         </div>)}
         {step === 2 && (
         <div>

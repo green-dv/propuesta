@@ -6,10 +6,10 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "Can't help falling in love",
-  artist: "Elvis Presley",
-  albumArt: "/elvis.jpg", 
-  audioSrc: "/Elvis.mp3" 
+  title: "I think they call this love",
+  artist: "Elliot James Reay",
+  albumArt: "/love.jpg", 
+  audioSrc: "/Love.mp3" 
 };
 
 const AudioPlayer = () => {
