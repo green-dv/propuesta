@@ -6,7 +6,7 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "never Gonna Give you Up",
+  title: "Never Gonna Give you Up",
   artist: "Rick Astley",
   albumArt: "/rick.jpg", 
   audioSrc: "/rick.mp3" 

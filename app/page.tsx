@@ -446,6 +446,7 @@ export default function Home() {
         )}
 
       </div>
+      <AudioPlayer/>
       </div>
 
       <style jsx>{`
