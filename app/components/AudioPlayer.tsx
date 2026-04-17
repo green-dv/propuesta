@@ -6,10 +6,10 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "I think they call this love",
-  artist: "Elliot James Reay",
-  albumArt: "/love.jpg", 
-  audioSrc: "/Love.mp3" 
+  title: "never Gonna Give you Up",
+  artist: "Rick Astley",
+  albumArt: "/rick.jpg", 
+  audioSrc: "/rick.mp3" 
 };
 
 const AudioPlayer = () => {

@@ -64,26 +64,7 @@ export default function Home() {
     return seleccion >= ahora && seleccion <= max;
   };
 
-  useEffect(() => {
-    const logAcceso = async () => {
-      try {
-        await fetch('/api/accesos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ruta: window.location.pathname,
-            userAgent: navigator.userAgent,
-          }),
-        })
-      } catch (error) {
-        console.error('Error log acceso:', error)
-      }
-    }
 
-    logAcceso()
-  }, [])
 
   const incompleto = !dia || !hora
   const invalido = esFechaHoraValida(dia, hora) === false
