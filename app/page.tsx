@@ -79,7 +79,11 @@ export default function Home() {
         <div>
 
           <h1 className="text-xl mb-4">
+            Sabes cual es la diferencia entre un pegamento y avion :p?
           </h1>
+          <button onClick={() => next(1)} className="btn">
+              Siguiente
+            </button>
 
         </div>)}
         {step === 1 && (
@@ -87,7 +91,7 @@ export default function Home() {
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Tal vez no pueda llevarte la otra sorpresa ;p esperaba poder dartelo en la villarroel o dejartelo en tu casa, es un poquito grande o.o
+            Que el pegamento pega y el avion des-pega :D🥁
           </h1>
 
         </div>)}

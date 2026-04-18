@@ -6,10 +6,10 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Información Hardcodeada
 const SONG_DATA = {
-  title: "Never Gonna Give you Up",
-  artist: "Rick Astley",
-  albumArt: "/rick.jpg", 
-  audioSrc: "/rick.mp3" 
+  title: "I can't help falling in love with you",
+  artist: "Elvis Presley",
+  albumArt: "/elvis.jpg", 
+  audioSrc: "/Elvis.mp3" 
 };
 
 const AudioPlayer = () => {
