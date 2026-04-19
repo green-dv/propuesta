@@ -94,18 +94,19 @@ export default function Home() {
             Que el pegamento pega y el avion des-pega :D🥁
           </h1>
 
+          <button onClick={() => next(1)} className="btn">
+              Siguiente
+            </button>
+
         </div>)}
         {step === 2 && (
         <div>
           <button onClick={prev} className="back">⬅ Volver</button>
 
           <h1 className="text-xl mb-4">
-            Hice ver como que hablarte fue un error, pero no lo fue
+            Okno no se que poner aqui :p un girasol hecho con matematicas btw
           </h1>
-
-          <button onClick={() => next(1)} className="btn">
-              Siguiente
-            </button>
+          <Sunflower />
         </div>)}
         {step === 3 && (
         <div>

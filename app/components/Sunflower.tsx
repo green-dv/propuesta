@@ -24,7 +24,7 @@ export default function Sunflower() {
 
       const petals = 16;
 
-        for (let i = 0; i < petals; i++) {
+      for (let i = 0; i < petals; i++) {
         if (i > t) continue;
 
         const angle = (i / petals) * Math.PI * 2;
@@ -48,7 +48,7 @@ export default function Sunflower() {
         ctx.stroke();
 
         ctx.restore();
-        }
+      }
 
       if (t > 10) {
         ctx.beginPath();
